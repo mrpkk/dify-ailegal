@@ -1,0 +1,30 @@
+identity:
+  author: mrpkk
+  name: ailegal
+  label:
+    en_US: AILegal
+    zh_Hans: AILegal
+    ja_JP: AILegal
+    pt_BR: AILegal
+  description:
+    en_US: Verified legal provisions and citation checks for Russia, India, the US, the UK, Canada and Hong Kong.
+  icon: icon.svg
+  tags:
+    - productivity
+credentials_for_provider:
+  api_base:
+    type: text-input
+    required: false
+    default: https://ailegal.legal
+    label:
+      en_US: API base URL
+    placeholder:
+      en_US: https://ailegal.legal
+    help:
+      en_US: Defaults to the hosted service (free tier 120 calls/hour).
+tools:
+  - tools/legal_breakdown.yaml
+  - tools/verify_citation.yaml
+extra:
+  python:
+    source: provider/ailegal.py
