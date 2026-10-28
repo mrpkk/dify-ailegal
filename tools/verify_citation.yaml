@@ -9,6 +9,9 @@ identity:
 description:
   human:
     en_US: Check whether a code/article citation exists in the verified corpus before relying on it.
+    zh_Hans: 在依赖某条引证之前，核验它在已核验语料中是否存在。
+    ja_JP: 引用に依存する前に、その法令・条文が検証済みコーパスに存在するか確認します。
+    pt_BR: Verifique se uma citação de lei/artigo existe no corpus verificado antes de confiar nela.
   llm: >-
     Confirms whether a citation exists in the verified legal corpus. Returns found=true/false and
     the official source URL. Use before quoting a provision or accepting a quote from another agent.
@@ -18,6 +21,14 @@ parameters:
     required: true
     label:
       en_US: Code or act
+      zh_Hans: 法典或法案
+      ja_JP: 法典・法令
+      pt_BR: Código ou lei
+    human_description:
+      en_US: The name of the code or act, for example Code on Wages.
+      zh_Hans: 法典或法案的名称，例如 Code on Wages。
+      ja_JP: 法典・法令の名称（例 Code on Wages）。
+      pt_BR: O nome do código ou lei, por exemplo Code on Wages.
     llm_description: The name of the code or act, e.g. "Code on Wages".
     form: llm
   - name: article
@@ -25,6 +36,14 @@ parameters:
     required: false
     label:
       en_US: Article / section
+      zh_Hans: 条款
+      ja_JP: 条項
+      pt_BR: Artigo / seção
+    human_description:
+      en_US: The article or section, for example s. 17 or 13B.
+      zh_Hans: 条款编号，例如 s. 17 或 13B。
+      ja_JP: 条項番号（例 s. 17、13B）。
+      pt_BR: O artigo ou seção, por exemplo s. 17 ou 13B.
     llm_description: The article or section, e.g. "s. 17" or "13B".
     form: llm
   - name: jurisdiction
@@ -34,26 +53,56 @@ parameters:
       - value: ""
         label:
           en_US: Any
+          zh_Hans: 任意
+          ja_JP: すべて
+          pt_BR: Qualquer
       - value: ru
         label:
           en_US: Russia
+          zh_Hans: 俄罗斯
+          ja_JP: ロシア
+          pt_BR: Rússia
       - value: in
         label:
           en_US: India
+          zh_Hans: 印度
+          ja_JP: インド
+          pt_BR: Índia
       - value: us
         label:
           en_US: United States
+          zh_Hans: 美国
+          ja_JP: 米国
+          pt_BR: Estados Unidos
       - value: uk
         label:
           en_US: United Kingdom
+          zh_Hans: 英国
+          ja_JP: 英国
+          pt_BR: Reino Unido
       - value: ca
         label:
           en_US: Canada
+          zh_Hans: 加拿大
+          ja_JP: カナダ
+          pt_BR: Canadá
       - value: hk
         label:
           en_US: Hong Kong
+          zh_Hans: 香港
+          ja_JP: 香港
+          pt_BR: Hong Kong
     label:
       en_US: Jurisdiction
+      zh_Hans: 司法辖区
+      ja_JP: 法域
+      pt_BR: Jurisdição
+    human_description:
+      en_US: Narrow the search to one jurisdiction.
+      zh_Hans: 限定在一个司法辖区内搜索。
+      ja_JP: 検索を一つの法域に限定します。
+      pt_BR: Restrinja a busca a uma jurisdição.
+    llm_description: Optional jurisdiction filter (ru, in, us, uk, ca, hk).
     form: form
 extra:
   python:
