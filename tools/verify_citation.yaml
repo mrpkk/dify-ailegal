@@ -1,0 +1,57 @@
+identity:
+  name: verify_citation
+  author: mrpkk
+  label:
+    en_US: Verify citation
+description:
+  human:
+    en_US: Check whether a code/article citation exists in the verified corpus before relying on it.
+  llm: >-
+    Confirms whether a citation exists in the verified legal corpus. Returns found=true/false and
+    the official source URL. Use before quoting a provision or accepting a quote from another agent.
+parameters:
+  - name: code
+    type: string
+    required: true
+    label:
+      en_US: Code or act
+    llm_description: The name of the code or act, e.g. "Code on Wages".
+    form: llm
+  - name: article
+    type: string
+    required: false
+    label:
+      en_US: Article / section
+    llm_description: The article or section, e.g. "s. 17" or "13B".
+    form: llm
+  - name: jurisdiction
+    type: select
+    required: false
+    options:
+      - value: ""
+        label:
+          en_US: Any
+      - value: ru
+        label:
+          en_US: Russia
+      - value: in
+        label:
+          en_US: India
+      - value: us
+        label:
+          en_US: United States
+      - value: uk
+        label:
+          en_US: United Kingdom
+      - value: ca
+        label:
+          en_US: Canada
+      - value: hk
+        label:
+          en_US: Hong Kong
+    label:
+      en_US: Jurisdiction
+    form: form
+extra:
+  python:
+    source: tools/verify_citation.py
