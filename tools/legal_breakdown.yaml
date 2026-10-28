@@ -3,6 +3,9 @@ identity:
   author: mrpkk
   label:
     en_US: Legal breakdown
+    zh_Hans: 法律解析
+    ja_JP: 法的分析
+    pt_BR: Análise jurídica
 description:
   human:
     en_US: Describe a legal situation and get the provisions that apply, with official-source links. Says "no verified norm" when the corpus has none.
