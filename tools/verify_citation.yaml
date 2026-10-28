@@ -3,6 +3,9 @@ identity:
   author: mrpkk
   label:
     en_US: Verify citation
+    zh_Hans: 核验引证
+    ja_JP: 引用の検証
+    pt_BR: Verificar citação
 description:
   human:
     en_US: Check whether a code/article citation exists in the verified corpus before relying on it.
