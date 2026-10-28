@@ -9,6 +9,9 @@ identity:
 description:
   human:
     en_US: Describe a legal situation and get the provisions that apply, with official-source links. Says "no verified norm" when the corpus has none.
+    zh_Hans: 描述法律情形，获得适用的条文与官方来源链接。没有已核验条文时明确说明。
+    ja_JP: 法的状況を説明すると、適用される条文と公式出典リンクを返します。検証済み条文がなければ明示します。
+    pt_BR: Descreva uma situação jurídica e receba os dispositivos aplicáveis com links oficiais. Se não houver norma verificada, o plugin diz isso.
   llm: >-
     Returns the legal provisions that apply to a described situation, each with a link to the
     official text. Jurisdictions: ru, in, us, uk, ca, hk. When the verified corpus has no
@@ -19,8 +22,14 @@ parameters:
     required: true
     label:
       en_US: Situation
+      zh_Hans: 情形
+      ja_JP: 状況
+      pt_BR: Situação
     human_description:
       en_US: Describe what happened, in your own words.
+      zh_Hans: 用自己的话描述发生了什么。
+      ja_JP: 起きたことを自分の言葉で説明してください。
+      pt_BR: Descreva o que aconteceu, com suas palavras.
     llm_description: The situation as described by the user; do not add facts that were not stated.
     form: llm
   - name: jurisdiction
@@ -31,25 +40,49 @@ parameters:
       - value: ru
         label:
           en_US: Russia
+          zh_Hans: 俄罗斯
+          ja_JP: ロシア
+          pt_BR: Rússia
       - value: in
         label:
           en_US: India
+          zh_Hans: 印度
+          ja_JP: インド
+          pt_BR: Índia
       - value: us
         label:
           en_US: United States
+          zh_Hans: 美国
+          ja_JP: 米国
+          pt_BR: Estados Unidos
       - value: uk
         label:
           en_US: United Kingdom
+          zh_Hans: 英国
+          ja_JP: 英国
+          pt_BR: Reino Unido
       - value: ca
         label:
           en_US: Canada
+          zh_Hans: 加拿大
+          ja_JP: カナダ
+          pt_BR: Canadá
       - value: hk
         label:
           en_US: Hong Kong
+          zh_Hans: 香港
+          ja_JP: 香港
+          pt_BR: Hong Kong
     label:
       en_US: Jurisdiction
+      zh_Hans: 司法辖区
+      ja_JP: 法域
+      pt_BR: Jurisdição
     human_description:
       en_US: Which law applies.
+      zh_Hans: 适用哪一国的法律。
+      ja_JP: どの法域の法律を適用するか。
+      pt_BR: Qual lei se aplica.
     llm_description: One of ru, in, us, uk, ca, hk. Ask the user if unclear.
     form: form
   - name: locale
@@ -60,11 +93,26 @@ parameters:
       - value: en
         label:
           en_US: English
+          zh_Hans: 英语
+          ja_JP: 英語
+          pt_BR: Inglês
       - value: ru
         label:
           en_US: Russian
+          zh_Hans: 俄语
+          ja_JP: ロシア語
+          pt_BR: Russo
     label:
       en_US: Answer language
+      zh_Hans: 回答语言
+      ja_JP: 回答言語
+      pt_BR: Idioma da resposta
+    human_description:
+      en_US: Language of the answer.
+      zh_Hans: 回答使用的语言。
+      ja_JP: 回答の言語。
+      pt_BR: Idioma da resposta.
+    llm_description: Answer language, en or ru.
     form: form
 extra:
   python:
