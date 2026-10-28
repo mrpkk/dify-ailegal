@@ -1,0 +1,42 @@
+version: 0.0.1
+type: plugin
+author: mrpkk
+name: ailegal
+label:
+  en_US: AILegal
+  zh_Hans: AILegal
+  ja_JP: AILegal
+  pt_BR: AILegal
+description:
+  en_US: Verified legal provisions for six jurisdictions. Answers cite provisions read in official sources, or say there is no verified norm instead of inventing an article.
+  zh_Hans: 六个司法辖区的已核验法律条文。回答引用官方来源，否则明确说明没有已核验条文。
+  ja_JP: 6つの法域の検証済み法令。公式出典を引用し、存在しない条文を作りません。
+  pt_BR: Dispositivos legais verificados em seis jurisdições. Cita fontes oficiais ou diz que não há norma verificada.
+icon: icon.svg
+resource:
+  memory: 268435456
+  permission:
+    tool:
+      enabled: true
+plugins:
+  tools:
+    - provider/ailegal.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  minimum_dify_version: "1.0.0"
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+created_at: 2026-10-28T00:00:00Z
+privacy: PRIVACY.md
+repo: https://github.com/mrpkk/dify-ailegal
+contact: maxim.pkk@gmail.com
+network:
+  domains:
+    - ailegal.legal
+tags:
+  - productivity
