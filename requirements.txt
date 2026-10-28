@@ -1,1 +1,2 @@
+dify-plugin>=0.10.0,<0.11.0
 requests>=2.31.0
