@@ -1,0 +1,68 @@
+identity:
+  name: legal_breakdown
+  author: mrpkk
+  label:
+    en_US: Legal breakdown
+description:
+  human:
+    en_US: Describe a legal situation and get the provisions that apply, with official-source links. Says "no verified norm" when the corpus has none.
+  llm: >-
+    Returns the legal provisions that apply to a described situation, each with a link to the
+    official text. Jurisdictions: ru, in, us, uk, ca, hk. When the verified corpus has no
+    provision, the answer is an explicit refusal instead of an invented article.
+parameters:
+  - name: text
+    type: string
+    required: true
+    label:
+      en_US: Situation
+    human_description:
+      en_US: Describe what happened, in your own words.
+    llm_description: The situation as described by the user; do not add facts that were not stated.
+    form: llm
+  - name: jurisdiction
+    type: select
+    required: true
+    default: ru
+    options:
+      - value: ru
+        label:
+          en_US: Russia
+      - value: in
+        label:
+          en_US: India
+      - value: us
+        label:
+          en_US: United States
+      - value: uk
+        label:
+          en_US: United Kingdom
+      - value: ca
+        label:
+          en_US: Canada
+      - value: hk
+        label:
+          en_US: Hong Kong
+    label:
+      en_US: Jurisdiction
+    human_description:
+      en_US: Which law applies.
+    llm_description: One of ru, in, us, uk, ca, hk. Ask the user if unclear.
+    form: form
+  - name: locale
+    type: select
+    required: false
+    default: en
+    options:
+      - value: en
+        label:
+          en_US: English
+      - value: ru
+        label:
+          en_US: Russian
+    label:
+      en_US: Answer language
+    form: form
+extra:
+  python:
+    source: tools/legal_breakdown.py
