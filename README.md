@@ -46,8 +46,6 @@ means: do not rely on this citation.
 
 - **Base URL:** `https://ailegal.legal` (configurable via `api_base`).
 - **Free tier:** 120 calls/hour, no account, no key.
-- **Paid volume rail (optional):** x402 per-call payments, `https://ailegal.legal/api/v2/x402/counsel`
-  ($0.05 USDC on Base). It is not used by the plugin unless you build a custom flow.
 - **Credential handling:** the plugin stores no credentials. `api_base` is kept by Dify as provider
   configuration. No secret is sent anywhere.
 - **Connection requirements:** outbound HTTPS to the configured `api_base` (and only that host).
@@ -70,12 +68,3 @@ The packaged archive was rebuilt after these checks. The hosted endpoint was ver
 `initialize` returns 200 and `verify_citation` answers `found=true` for `Code on Wages s.17`.
 
 Legal information, not legal advice.
-
-## Related evidence products (same team)
-
-- **Deny evidence** — a signed, append-only log of refusals (who asked, which policy, why):
-  https://attest.rta.lat/deny-evidence
-- **EU AI Act evidence pack** — audit log, deny log, human oversight, model card, risk assessment
-  and data-flow map, from $1,500: https://attest.rta.lat/eu-ai-act-evidence
-- **Agent Spend Audit** — five days on one month of agent logs, $500 in USDC:
-  https://rta.lat/audit/ (note the domain: `rta.lat/audit/`, not `attest.rta.lat/audit`)
