@@ -1,4 +1,4 @@
-version: 0.0.1
+version: 0.0.2
 type: plugin
 author: mrpkk
 name: ailegal
@@ -22,7 +22,7 @@ plugins:
   tools:
     - provider/ailegal.yaml
 meta:
-  version: 0.0.1
+  version: 0.0.2
   arch:
     - amd64
     - arm64

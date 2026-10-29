@@ -17,7 +17,7 @@ class AILegalProvider(ToolProvider):
             raise ToolProviderCredentialValidationError("api_base must be an absolute http(s) URL")
         try:
             r = requests.get(f"{base}/api/v2/oracle/stats", timeout=10,
-                             headers={"User-Agent": "dify-ailegal-plugin/0.0.1"})
+                             headers={"User-Agent": "dify-ailegal-plugin/0.0.2"})
             r.raise_for_status()
         except Exception as exc:  # noqa: BLE001
             raise ToolProviderCredentialValidationError(f"AILegal is not reachable at {base}: {exc}") from exc

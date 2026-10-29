@@ -19,7 +19,7 @@ class LegalBreakdownTool(Tool):
                    "jurisdiction": tool_parameters.get("jurisdiction") or "ru",
                    "locale": tool_parameters.get("locale") or "en"}
         r = requests.post(f"{base}/api/v2/ask", json=payload, timeout=60,
-                          headers={"User-Agent": "dify-ailegal-plugin/0.0.1"})
+                          headers={"User-Agent": "dify-ailegal-plugin/0.0.2"})
         r.raise_for_status()
         data = r.json()
         result = data.get("result") or {}

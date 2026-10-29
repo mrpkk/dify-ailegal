@@ -18,6 +18,6 @@ class VerifyCitationTool(Tool):
         if tool_parameters.get("jurisdiction"):
             params["jurisdiction"] = tool_parameters["jurisdiction"]
         r = requests.get(f"{base}/api/v2/oracle/citation", params=params, timeout=30,
-                         headers={"User-Agent": "dify-ailegal-plugin/0.0.1"})
+                         headers={"User-Agent": "dify-ailegal-plugin/0.0.2"})
         r.raise_for_status()
         yield self.create_json_message(r.json())
