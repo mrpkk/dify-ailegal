@@ -70,3 +70,12 @@ The packaged archive was rebuilt after these checks. The hosted endpoint was ver
 `initialize` returns 200 and `verify_citation` answers `found=true` for `Code on Wages s.17`.
 
 Legal information, not legal advice.
+
+## Related evidence products (same team)
+
+- **Deny evidence** — a signed, append-only log of refusals (who asked, which policy, why):
+  https://attest.rta.lat/deny-evidence
+- **EU AI Act evidence pack** — audit log, deny log, human oversight, model card, risk assessment
+  and data-flow map, from $1,500: https://attest.rta.lat/eu-ai-act-evidence
+- **Agent Spend Audit** — five days on one month of agent logs, $500 in USDC:
+  https://rta.lat/audit/ (note the domain: `rta.lat/audit/`, not `attest.rta.lat/audit`)
